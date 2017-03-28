@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Further Maths</title>
+		<link type="text/css" rel="stylesheet" href="new.css"/>
+		<link rel="icon" href="favicon.png">
+		<script src="myscript.js"></script>
+	</head>
+	<body background="background.jpg" onload="test()">
+		<div>
+			<ul id="header">
+				<li class="link"><a href="about.html">About</a></li>
+				<li class="link"><a href="maths.html">Maths</a></li>
+				<li class="link"><a href="furthermaths.html">Further Maths</a></li>
+				<li class="link"><a href="physics.html">Physics</a></li>
+				<li class="link"><a href="chemistry.html">Chemistry</a></li>
+				<li class="link"><a href="computerscience.html">Computer Science</a></li>
+				<li style="float: right; margin-right: 20px"><p id="name">Hi </p></li>
+			</ul>
+		</div>
+		<div id="left">
+			<div>
+				<p id="indent"><h1>Further Maths</h1></p>
+				<h2><a href="#statsone">Statistics 1</a></h2>
+				<h3>Topics</h3>
+				<span>
+					<ul>
+						<li><a href="#1">Probability</a></li>
+						<li><a href="#2">Discrete Probability Distributions</a></li>
+						<li><a href="#3">Binomial and Poisson Distributions</a></li>
+						<li><a href="#4">Continuous Probability Distributions</a></li>
+					</ul>
+				</span>
+				<h2><a href="#statstwo">Statistics 2</a></h2>
+				<h3>Topics</h3>
+				<span>
+					<ul>
+						<li><a href="#5">Uniform Distribution</a></li>
+						<li><a href="#6">Normal Distribution</a></li>
+						<li><a href="#7">Expectation Algebra</a></li>
+						<li><a href="#8">Distribution of Mean</a></li>
+						<li><a href="#9">Hypothesis Testing</a></li>
+						<li><a href="#10">Confidence Limits</a></li>
+					</ul>
+				</span>
+				<h2><a href="#statsthree">Statistics 3</a></h2>
+				<h3>Topics</h3>
+				<span>
+					<ul>
+						<li><a href="#11">Estimators and Sampling</a></li>
+						<li><a href="#12">Hypothesis Testing</a></li>
+						<li><a href="#13">Confidence Limits</a></li>
+						<li><a href="#14">Linear Regression</a></li>
+					</ul>
+				</span>
+			</div>
+		</div>
+		<div id="right">
+			<div id="indent">
+				<div>
+					<a name="statsone" class="anchor"></a>
+					<p><h1>Statistics 1</h1></p>
+					<ol>
+						<a class="anchor" name="1"></a>
+						<li><h3>Probability</h3></li>
+						<p>This topic covers Venn diagrams for modelling probability and the laws regarding P(AUB) notation. It also includes being able to model the sample space as a tree diagram, the Law of Total Probability and Bayes' Theorem. I have also had to learn about arrangements, combinations and permutations, including <sup>n</sup>C<sub>r</sub> and <sup>n</sup>P<sub>r</sub> notation.</p>
+						<a class="anchor" name="2"></a>
+						<li><h3>Discrete Probability Distributions</h3></li>
+						<p>This details the modelling of discrete random variables, i.e. a dice role, the mean, or expectation, variance and standard deviation of the variable.</p>
+						<a class="anchor" name="3"></a>
+						<li><h3>Binomial and Poisson Distributions</h3></li>
+						<p>The Binomial Distribution is a special discrete probability distribution such that it satisfies Bernoulli trials. It requires a set n (number of times the test is completed) and a distinct p (probability of the event happening). Since it satisfies a Bernoulli trial, there are only two outcomes and the result is modelled as - X&sim;B(n, p). The value is calculated as <sup>n</sup>C<sub>r</sub> * p<sup>r</sup> * (1 - p)<sup>n - r</sup>. The Poisson distribution is used when there is a set p (probability) and a distinct period within which this mean falls, i.e. number of blue cars passing a point per hour. It is modelled by - X&sim;Po(&lambda;). To calculate a value for P(X &le; k), use the formula: (&lambda;<sup>k</sup> * e<sup>-&lambda;)&frasl;(k!).</sup></p>
+						<a class="anchor" name="4"></a>
+						<li><h3>Continuous Probability Distributions</h3></li>
+						<p>These are distributions do not have distinct values for n. It is given by a probability density function (p.d.f) as f(x), where E(X) = &#x222b;<sup>a</sup><sub id="integral">b</sub>  (x)f(x) dx. This is true because for continuous distributions - E(g(x)) = &#x222b;<sup>a</sup><sub id="integral">b</sub>  g(x)f(x) dx. The equation for the variance is the same as for discrete distributions - E(X<sup>2</sup>) - E(X)<sup>2</sup>. The cumulative distribution function (c.d.f) = &#x222b;<sup>x</sup><sub id="integral">b</sub>  f(t) dt, where t is a dumby variable for x.</p>
+					</ol>
+				</div>
+				<div>
+					<a name="statstwo" class="anchor"></a>
+					<p><h1>Statistics 2</h1></p>
+					<ol>
+						<a class="anchor" name="5"></a>
+						<li>Uniform Distributions</li>
+						<p>The uniform distribution is a special continuous distribution, where the probability is equal for all possible outcomes, producing a graph looking like: <br/><img src="uniformdist.gif" id="mathsimg"/><br/>. The p.d.f is - f(x) = 1&frasl;(b - a). The E(X) = &frac12;(a + b) and the Var(X) = 1&frasl;12(b - a). It is modelled by X&sim;U(a, b)</p>
+						<a class="anchor" name="6"></a>
+						<li>Normal Distributions</li>
+						<p>The normal distribution is another special continuous distrubtion, where the probability is equally distributed across the mean in a bell shape, producing a graph looking like: <br/><img src="normaldist.jpg" id="mathsimg"/><br/> You are not required to know the p.d.f for this distribution, but it is modelled by X&sim;N(&mu;, &sigma;) it is given in tables during the exam. To calculate a value for P(X &li; k) you must convert it to the standardised normal - Z&sim;N(0, 1). To do this, apply the formula (X-&mu;)&frasl;&sigma;.</p>
+						<a class="anchor" name="7"></a>
+						<li>Expectation Algebra</li>
+						<p>This covers the laws of E(X) and adding multiple normal distributions - X + Y&sim;N(&mu;<sub>x</sub> + &mu;<sub>y</sub>, &sigma;<sub>x</sub><sup>2</sup> + &sigma;<sub>y</sub><sup>2</sup>) and X - Y&sim;N(&mu;<sub>x</sub> - &mu;<sub>y</sub>, &sigma;<sub>x</sub><sup>2</sup> + &sigma;<sub>y</sub><sup>2</sup>).</p>
+						<a class="anchor" name="8"></a>
+						<li>Distribution of Mean</li>
+						<p>This topic looks at: </p>
+						<ul class="show">
+							<li>Definition of a random sample of observations of a random variable. Distribution of the mean of a random sample from a normal distribution with known mean and variance. Use of the result that the mean of a large random sample from any distribution with known mean and variance is approximately normally distributed (the Central Limit Theorem).</li>
+						</ul>
+						<a class="anchor" name="9"></a>
+						<li>Hypothesis Testing</li>
+						<p>This tests the one hypothesis against another, such as the whether the mean is as stated and makes use of confidence intervals, confidence limits, p-values and significance levels, which all relate to the desired accuracy of the probability you are calculating.</p>
+						<a class="anchor" name="10"></a>
+						<li>Confidence Limits</li>
+						<p>This topic teaches you to calculate confidence limits for a normal distribution with known variance and the difference between the means of two normal distributions with known variance.</p>
+					</ol>
+				</div>
+				<div>
+					<a name="statsthree" class="anchor"></a>
+					<p><h1>Statistics 3</h1></p>
+					<ol>
+						<a class="anchor" name="11"></a>
+						<li>Estimators and Sampling</li>
+						<p>Estimators are used when the variance of a random variable is unknown, while sampling covers the sampling distributions used within statistics.</p>
+						<a class="anchor" name="12"></a>
+						<li>Hypothesis Testing</li>
+						<p>This adds on the work from S2, by including normal distributions whose variances are unknown, by using estimators.</p>
+						<a class="anchor" name="13"></a>
+						<li>Confidence Limits</li>
+						<p>Again, this grows on the work in S2 as it includes normal distributions with unknown variances, using estimators.</p>
+						<a class="anchor" name="14"></a>
+						<li>Linear Regression</li>
+						<p>Finally, linear regression covers the principle of least squares, with particular reference to its use for estimating a linear relationship y = &alpha; + &beta;x given a set of observations (x,y) where the observed x values are accurate and the observed y values are subject to independent random errors that are normally distributed with zero mean and specified variance. Confidence limits and hypothesis tests for &alpha;, &beta; and the true value of y for a given value of x.</p>
+					</ol>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

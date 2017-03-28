@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="home.css">
+	<script src="myscript.js"></script>
+</head>
+<body background="background.jpg">
+	<script>myFunc();</script>
+	<div>
+		<canvas id="a" width="400" height="400">
+            This text is displayed if your browser does not support HTML5 Canvas.
+        </canvas>
+			<script>
+				var hour;
+				var minute;
+				var second;
+				var a_canvas;
+				var context;
+				
+				var radiusMain;
+				var originx;
+				var originy;
+				
+				var secondPoints = new Array(60);
+				var stringPoints = new Array(60);
+				var minutePoints = new Array(60);
+				var hourPoints = new Array(60);
+				
+				var radiusSeconds;
+				var radiusMinutes;
+				var radiusHours;
+				var stringRadius;
+				var origin;
+				
+
+				function draw1() {
+				    a_canvas = document.getElementById("a");
+				    context = a_canvas.getContext("2d");
+				    radiusMain = a_canvas.height / 2;
+				    originx = radiusMain;
+				    originy = radiusMain;
+				    radiusSeconds = radiusMain * 0.8;
+				    radiusMinutes = radiusMain * 0.7;
+				    radiusHours = radiusMain * 0.6;
+				    stringRadius = radiusMain * 0.9;
+				    getDate();
+				    initialisePoints(radiusSeconds, secondPoints);
+				    initialisePoints(radiusMinutes, minutePoints);
+				    initialisePoints(radiusHours, hourPoints);
+				    initialisePoints(stringRadius, stringPoints);
+				
+ 				   	context.fillStyle = "white";
+				    context.beginPath();
+				    context.arc(originx, originy, radiusMain, 0, 2*Math.PI);
+				    context.closePath();
+				    context.fill();
+				    context.lineWidth = 2;
+				    context.stroke();
+				    context.fillStyle = "black";
+				    context.beginPath();
+				    context.arc(originx, originy, 3, 0, 2*Math.PI);
+				    context.closePath();
+				    context.fill();
+				    context.font = "18px Arial";
+				
+ 				   	for (var index = 1; index < 13; index++) {
+				      switch (index) {
+				      case 1: context.fillText(index.toString(), stringPoints[5].x, stringPoints[5].y);
+				      break;
+				      case 2: context.fillText(index.toString(), stringPoints[10].x, stringPoints[10].y);
+				      break;
+				      case 3: context.fillText(index.toString(), stringPoints[15].x, stringPoints[15].y);
+				      break;
+				      case 4: context.fillText(index.toString(), stringPoints[20].x, stringPoints[20].y);
+				      break;
+				      case 5: context.fillText(index.toString(), stringPoints[25].x, stringPoints[25].y);
+				      break;
+				      case 6: context.fillText(index.toString(), stringPoints[30].x, stringPoints[30].y);
+				      break;
+				      case 7: context.fillText(index.toString(), stringPoints[35].x, stringPoints[35].y);
+				      break;
+				      case 8: context.fillText(index.toString(), stringPoints[40].x, stringPoints[40].y);
+				      break;
+				      case 9: context.fillText(index.toString(), stringPoints[45].x, stringPoints[45].y);
+				      break;
+				      case 10: context.fillText(index.toString(), stringPoints[50].x, stringPoints[50].y);
+				      break;
+				      case 11: context.fillText(index.toString(), stringPoints[55].x, stringPoints[55].y);
+				      break;
+				      case 12: context.fillText(index.toString(), stringPoints[0].x, stringPoints[0].y);
+				      break;
+				      default: console.log("error");
+				      break;
+				    }
+				  }
+					context.lineWidth = 2;
+ 				   	context.beginPath();
+				    context.moveTo(originx, originy);
+				    context.lineTo(secondPoints[second].x, secondPoints[second].y);
+				    context.stroke();
+				
+					context.lineWidth = 6
+ 				   	context.beginPath();
+				    context.moveTo(originx, originy);
+				    context.lineTo(minutePoints[minute].x, minutePoints[minute].y);
+				    context.stroke();
+				
+					context.lineWidth = 10;
+ 				   	context.beginPath();
+				    context.moveTo(originx, originy);
+				    context.lineTo(hourPoints[hour].x, hourPoints[hour].y);
+				    context.stroke();
+				}
+				
+				function Point(x, y) {
+				  this.x = x;
+				  this.y = y;
+				}
+				
+				function getDate() {
+				  var date = new Date();
+				  hour = date.getHours();
+				  minute = date.getMinutes();
+				  second = date.getSeconds();
+				
+ 				 if (hour > 12) {
+				    hour = hour % 12;
+				  } else if (hour == 12) {
+				    hour = 0;
+				  }
+				
+ 				 hour = hour * 5;
+				  hour = hour + Math.floor(minute/10);
+				
+ 				 if ((minute >= 10) && (minute % 10 == 0)) {
+				    hour = hour + 1;
+				  }
+				}
+				
+				function initialisePoints(radius, points) {
+				  var angle = 0.0;
+				  var change = 6.0;
+				  var midpoint = 15;
+				
+ 				 for (var index = midpoint; index < points.length; index++) {
+				    var x = originx + (radius * Math.cos(angle * (Math.PI / 180)));
+				    var y = originy + (radius * Math.sin(angle * (Math.PI / 180)));
+				    points[index] = new Point(x, y);
+				    angle = angle + change;
+				  }
+				
+ 				 for (var index = 0; index < midpoint; index++) {
+				    var x = originx + (radius * Math.cos(angle * (Math.PI / 180)));
+				    var y = originy + (radius * Math.sin(angle * (Math.PI / 180)));
+				    points[index] = new Point(x, y);
+				    angle = angle + change;
+				  }
+				}
+			</script>
+			<script>
+				function myFunction() {
+					draw1();
+					setInterval(draw1, 1000);
+				}
+			</script>
+			<script>draw1(); myFunction();</script>
+        </div>
+	<div align="center" id="holder">
+		<table id="ta">
+			<tr>
+				<td>
+					<a href="maths.html"><p>Maths</p></a>
+				</td>
+				<td>
+					<a href="furthermaths.html"><p>Further Maths</p></a>
+				</td>
+				<td>
+					<a href="physics.html"><p>Physics</p></a>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="3" align="center" style="border: none;">
+					<table id="tb">
+						<tr>
+							<td>
+								<a href="chemistry.html"><p>Chemistry</p></a>
+							</td>
+							<td>
+								<a href="computerscience.html"><p>Computer Science</p></a>
+							</td>
+						</tr>
+					</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+	<div>
+		
+    </div>
+</body>
+</html>
