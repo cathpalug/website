@@ -1,0 +1,46 @@
+p {
+	color: white;
+	font-size: 22px;
+	font-family: Georgia;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+#ta {
+	border-spacing: 100px;
+}
+
+table {
+	position: relative;
+}
+
+td {
+	border: 2px solid white;
+	width: 200px;
+	height: 100px;
+	text-align: center;
+}
+
+tr {
+	width: 100%;
+}
+
+#tb {
+	border-spacing: 100px;
+}
+
+a {
+	text-decoration: none;
+}
+
+canvas {
+	float: left;
+	position: relative;
+	width: 20%;
+	height: 20%;
+}
+
+#holder {
+	position: relative;
+	float: center;
+}
